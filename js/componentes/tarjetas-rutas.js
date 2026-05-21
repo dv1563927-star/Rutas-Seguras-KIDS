@@ -7,7 +7,7 @@ class RouteCard extends HTMLElement {
         //busco mi template
         const template = document.querySelector("#route-card-template");
         //clono el template
-        this.shadowRoot.appendChild(template.textContent.cloneNode(true));
+        this.shadowRoot.appendChild(template.content.cloneNode(true));
     };
 
     //funcion para recibir los datos

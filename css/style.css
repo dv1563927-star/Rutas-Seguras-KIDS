@@ -170,6 +170,8 @@ p { color: var(--color-texto-suave); }
 
 .contenido-principal {
   flex: 1; /* ocupa todo el espacio disponible entre header y footer */
+  display: flex;
+  flex-direction: column;
     max-width: 1400px;
     width: min(100%, 1400px);
     margin: 0 auto;
@@ -197,6 +199,7 @@ p { color: var(--color-texto-suave); }
   margin-bottom: var(--espacio-l);
   padding-bottom: var(--espacio-s);
   border-bottom: 2px solid var(--color-borde);
+  overflow: hidden;
 }
 
 
@@ -416,20 +419,23 @@ p { color: var(--color-texto-suave); }
   .contenido-principal {
     display: grid;
     grid-template-columns: repeat(2, minmax(360px, 1fr));
-    grid-template-rows: auto 1fr;
     align-items: start;
     gap: var(--espacio-xl);
+    align-items: start;
   }
 
   .seccion-rutas,
   .seccion-lista-estudiantes {
     min-height: 420px;
+    min-width: 0;
+    overflow: hidden;
   }
 
   .lista-rutas {
+    margin-left:-19px;
     display: grid;
-    gap: var(--espacio-l);
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: var(--espacio-s);
+    grid-template-columns: 1fr;
   }
 }
 
@@ -438,6 +444,6 @@ p { color: var(--color-texto-suave); }
 
   /* Las rutas pueden mostrar 3 tarjetas por fila */
   .lista-rutas {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 }

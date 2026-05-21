@@ -89,7 +89,7 @@ function renderizarRutas() {
         tarjeta.cargarDatos(ruta);
 
         //ameto el componente al html
-        listaRutas.appendChild(Tarjeta);
+        listaRutas.appendChild(tarjeta);
     });
 };
 

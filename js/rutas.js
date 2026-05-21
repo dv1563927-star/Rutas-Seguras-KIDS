@@ -10,7 +10,7 @@ function guardarDatos() {
 //aqui cargo todos los datos
 function cargarDatos() {
     rutas = JSON.parse(localStorage.getItem("rutas")) || [];
-    estudiantes = JSON.parse(localStorage.getItem("rutas")) || [];
+    estudiantes = JSON.parse(localStorage.getItem("estudiantes")) || [];
 }
 
 function crearRuta(datos) {
@@ -21,7 +21,7 @@ function crearRuta(datos) {
         conductor: datos.conductor,
         ciudad: datos.ciudad,
         hora: datos.hora,
-        estudantes:[]
+        estudiantes:[]
     };
     //uso el .push para añadir el nuevo objeto al array vacio que hice arriba de rutas
     rutas.push(nuevaRuta);

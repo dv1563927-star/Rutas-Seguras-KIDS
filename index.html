@@ -21,39 +21,6 @@
     <!-- CONTENIDO PRINCIPAL (los formularios) -->
     <main class="contenido-principal">
 
-
-      <!--formulario de estudiantes para añadirlos-->
-      <section class="seccion seccion-estudiantes">
-        <h2 class="seccion-titulo">👥 Estudiantes disponibles</h2>
-        <form id="form-estudiante" class="formulario" novalidate>
-          <div class="campo">
-            <label for="nombre-estudiante" class="campo-etiqueta">Nombre del estudiante</label>
-            <input type="text" id="nombre-estudiante" name="nombreEstudiante" class="campo-input" placeholder="Ej: Daniel Fernando" autocomplete="off">
-            <span class="campo-error" id="error-nombre-estudiante"></span>
-          </div>
-
-          <div class="campo">
-            <label for="nombre-tutor" class="campo-etiqueta">Nombre del padre de familia</label>
-            <input type="text" id="nombre-tutor" name="nombreTutor" class="campo-input" placeholder="Ej: Emilse Sarmiento" autocomplete="off">
-            <span class="campo-error" id="error-nombre-tutor"></span>
-          </div>
-
-          <div class="campo">
-            <label for="telefono" class="campo-etiqueta">Número de teléfono</label>
-            <input type="number" id="telefono" name="telefono" class="campo-input" placeholder="Ej: 123456789" autocomplete="off">
-            <span class="campo-error" id="error-telefono"></span>
-          </div>
-
-          <div class="campo">
-            <label for="direccion" class="campo-etiqueta">Direccion</label>
-            <input type="text" id="direccion" name="direccion" class="campo-input" placeholder="Ej: Calle 123" autocomplete="off">
-            <span class="campo-error" id="error-direccion"></span>
-          </div>
-
-          <button type="submit" class="boton-primario">Crear estudiante</button>
-        </form>
-      </section>
-
       <!-- formulario de nuevas rutas -->
 
       <section class="seccion seccion-formulario">
@@ -62,29 +29,61 @@
         <form id="form-ruta" class="formulario" novalidate>
           <div class="campo">
             <label for="nombre-ruta" class="campo-etiqueta">Nombre de la ruta</label>
-            <input type="text" id="nombre-ruta" name="nombreRuta" class="campo-input" placeholder="Ej: Ruta Norte" autocomplete="off">
+            <input type="text" id="nombre-ruta" name="nombreRuta" class="campo-input" placeholder="Ej: Ruta Norte" autocomplete="off" required>
             <span class="campo-error" id="error-nombre-ruta"></span>
           </div>
 
           <div class="campo">
             <label for="conductor" class="campo-etiqueta">Conductor</label>
-            <input type="text" id="conductor" name="conductor" class="campo-input" placeholder="Ej: Carlos Ramirez" autocomplete="off">
+            <input type="text" id="conductor" name="conductor" class="campo-input" placeholder="Ej: Carlos Ramirez" autocomplete="off" required>
             <span class="campo-error" id="error-conductor"></span>
           </div>
 
           <div class="campo">
             <label for="ciudad" class="campo-etiqueta">Ciudad</label>
-            <input type="text" id="ciudad" name="ciudad" class="campo-input" placeholder="Ej: Piedecuesta" autocomplete="off">
+            <input type="text" id="ciudad" name="ciudad" class="campo-input" placeholder="Ej: Piedecuesta" autocomplete="off" required>
             <span class="campo-error" id="error-ciudad"></span>
           </div>
 
           <div class="campo">
             <label for="hora-salida" class="campo-etiqueta">Hora de salida</label>
-            <input type="time" id="hora-salida" name="horaSalida" class="campo-input" autocomplete="off">
+            <input type="time" id="hora-salida" name="horaSalida" class="campo-input" autocomplete="off" required>
             <span class="campo-error" id="error-hora-salida"></span>
           </div>
 
           <button type="submit" class="boton-primario">Crear Ruta</button>
+        </form>
+      </section>
+
+      <!--formulario de estudiantes para añadirlos-->
+      <section class="seccion seccion-estudiantes">
+        <h2 class="seccion-titulo">👥 Estudiantes disponibles</h2>
+        <form id="form-estudiante" class="formulario" novalidate>
+          <div class="campo">
+            <label for="nombre-estudiante" class="campo-etiqueta">Nombre del estudiante</label>
+            <input type="text" id="nombre-estudiante" name="nombreEstudiante" class="campo-input" placeholder="Ej: Daniel Fernando" autocomplete="off" required>
+            <span class="campo-error" id="error-nombre-estudiante"></span>
+          </div>
+
+          <div class="campo">
+            <label for="nombre-tutor" class="campo-etiqueta">Nombre del padre de familia</label>
+            <input type="text" id="nombre-tutor" name="nombreTutor" class="campo-input" placeholder="Ej: Emilse Sarmiento" autocomplete="off" required>
+            <span class="campo-error" id="error-nombre-tutor"></span>
+          </div>
+
+          <div class="campo">
+            <label for="telefono" class="campo-etiqueta">Número de teléfono</label>
+            <input type="number" id="telefono" name="telefono" class="campo-input" placeholder="Ej: 123456789" autocomplete="off" required>
+            <span class="campo-error" id="error-telefono"></span>
+          </div>
+
+          <div class="campo">
+            <label for="direccion" class="campo-etiqueta">Direccion</label>
+            <input type="text" id="direccion" name="direccion" class="campo-input" placeholder="Ej: Calle 123" autocomplete="off" required>
+            <span class="campo-error" id="error-direccion"></span>
+          </div>
+
+          <button type="submit" class="boton-primario">Crear estudiante</button>
         </form>
       </section>
 
@@ -119,6 +118,7 @@
  
       :host {
         display: block;
+        width: 100%;
       }
  
       .tarjeta {
@@ -128,6 +128,8 @@
         box-shadow: 0 4px 16px rgba(0,0,0,0.3);
         border: 2px solid transparent;
         transition: border-color 0.2s, transform 0.2s;
+        width: 100%;
+        box-sizing: border-box;
       }
  
       .tarjeta:hover {
