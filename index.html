@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rutas Seguras KIDS</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- HEADER -->
+    <header class = "encabezado">
+        <div class = "encabezado-contenido">
+            <div class = "encabezado-marca">
+                <span class = "encabezado-icono">🚌</span>
+                <h1 class = "encabezado-titulo">Rutas seguras <span>kids</span></h1>
+            </div>
+            <p class = "encabezado-subtitulo">Gestion de rutas y estudiantes escolares</p>
+        </div>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL (el formulario)-->
+    <main class = "contenido-principal">
+        <!--El formulario va aca-->
+        <section class = "seccion-formulario">
+            <h2 class ="seccion-titulo">➕ Nueva Ruta</h2>
+
+            <form id="form-ruta" class="formulario" novalidate>
+                <div class="campo">
+                    <label for="nombre-ruta" class="campo-etiqueta">Nombre de la ruta</label>
+                    <input type="text" id="nombre-ruta" name="nombreRuta" class="campo-input" placeholder="Ej: Ruta Norte" autocomplete="off">
+                    <span class="campo-error" id="error-nombre-ruta"></span>
+                </div>
+
+                <div class="campo">
+                    <label for="conductor" class="campo-etiqueta">Conductor</label>
+                    <input type="text" id="conductor" name="conductor" class="campo-input" placeholder="Ej: Carlos Ramirez" autocomplete="off">
+                    <span class="campo-error" id="error-conductor"></span>
+                </div>
+
+                <div class="campo">
+                    <label for="ciudad" class="campo-etiqueta">Ciudad</label>
+                    <input type="text" id="ciudad" name="ciudad" class="campo-input" placeholder="Ej: Piedecuesta" autocomplete="off">
+                    <span class="campo-error" id="error-ciudad"></span>
+                </div>
+
+                <button type="submit" class="boton-primario">Crear Ruta</button>
+            </form>
+        </section>
+
+        <!-- Seccion de rutas ya creadas-->
+
+        <section class="seccion-rutas">
+            <h2 class="seccion-titulo">🗺️ Rutas activas</h2>
+
+            <!-- Aqui JS inserta los route cards dinamicamente -->
+            <div class="lista-rutas" id="lista-rutas">
+                <p class="lista-vacia" id="mensaje-vacio">No hay rutas creadas aun. ¡Agrega la primera!</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer pa mero estilo-->
+    <footer class="pie-pagina">
+        <p>&copy; 2026 Rutas Seguras KIDS. pa mero visaje</p>
+    </footer>
+
+    <template id="route-card-template">
+    <style>
+      /* Este CSS vive dentro del Shadow DOM,
+         no afecta ni es afectado por styles.css */
+ 
+      :host {
+        display: block;
+      }
+ 
+      .tarjeta {
+        background: #25253a;
+        border-radius: 16px;
+        padding: 1.25rem;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+        border: 2px solid transparent;
+        transition: border-color 0.2s, transform 0.2s;
+      }
+ 
+      .tarjeta:hover {
+        border-color: #4ecca3;
+        transform: translateY(-2px);
+      }
+ 
+      .tarjeta-cabecera {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 0.75rem;
+      }
+ 
+      .tarjeta-nombre {
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: #e8e8f0;
+        margin: 0;
+      }
+ 
+      .tarjeta-botones {
+        display: flex;
+        gap: 0.4rem;
+      }
+ 
+      .boton-icono {
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 1rem;
+        padding: 0.2rem;
+        border-radius: 6px;
+        transition: background 0.15s;
+      }
+ 
+      .boton-icono:hover { background: #2d2d44; }
+ 
+      .tarjeta-info {
+        font-size: 0.875rem;
+        color: #a0a0c0;
+        margin-bottom: 0.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+      }
+ 
+      .tarjeta-info span {
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+      }
+ 
+      .tarjeta-clima {
+        font-size: 0.8rem;
+        background: #1a2e2a;
+        color: #4ecca3;
+        border-radius: 8px;
+        padding: 0.35rem 0.6rem;
+        margin-top: 0.5rem;
+      }
+ 
+      .tarjeta-estudiantes {
+        margin-top: 1rem;
+      }
+ 
+      .estudiantes-titulo {
+        font-size: 0.8rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: #6060a0;
+        margin-bottom: 0.5rem;
+      }
+ 
+      .estudiantes-lista {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 0.3rem;
+      }
+ 
+      .estudiantes-lista li {
+        font-size: 0.875rem;
+        color: #e8e8f0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: #1e1e30;
+        border-radius: 8px;
+        padding: 0.3rem 0.6rem;
+      }
+ 
+      .boton-eliminar-estudiante {
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: #f87171;
+        font-size: 0.85rem;
+        padding: 0;
+        line-height: 1;
+      }
+ 
+      .agregar-estudiante {
+        display: flex;
+        gap: 0.4rem;
+        margin-top: 0.6rem;
+      }
+ 
+      .agregar-estudiante input {
+        flex: 1;
+        border: 1.5px solid #2d2d44;
+        border-radius: 8px;
+        padding: 0.35rem 0.6rem;
+        font-size: 0.85rem;
+        outline: none;
+        font-family: inherit;
+        background: #1e1e30;
+        color: #e8e8f0;
+      }
+ 
+      .agregar-estudiante input:focus { border-color: #4ecca3; }
+ 
+      .agregar-estudiante button {
+        background: #4ecca3;
+        color: #12121e;
+        border: none;
+        border-radius: 8px;
+        padding: 0.35rem 0.7rem;
+        font-size: 0.85rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background 0.15s;
+      }
+ 
+      .agregar-estudiante button:hover { background: #38b28d; }
+    </style>
+ 
+    <article class="tarjeta">
+ 
+      <div class="tarjeta-cabecera">
+        <h3 class="tarjeta-nombre" data-field="nombre"></h3>
+        <div class="tarjeta-botones">
+          <button class="boton-icono" data-action="editar" title="Editar ruta">✏️</button>
+          <button class="boton-icono" data-action="eliminar" title="Eliminar ruta">🗑️</button>
+        </div>
+      </div>
+ 
+      <div class="tarjeta-info">
+        <span>🧑‍✈️ <strong data-field="conductor"></strong></span>
+        <span>🕐 <strong data-field="hora"></strong></span>
+        <span>📍 <strong data-field="ciudad"></strong></span>
+      </div>
+ 
+      <div class="tarjeta-clima" data-field="clima">🌤️ Cargando clima...</div>
+ 
+      <div class="tarjeta-estudiantes">
+        <p class="estudiantes-titulo">Estudiantes</p>
+        <ul class="estudiantes-lista" data-field="lista-estudiantes"></ul>
+        <div class="agregar-estudiante">
+          <input type="text" placeholder="Nombre del estudiante" data-field="input-estudiante" />
+          <button data-action="agregar-estudiante">+ Agregar</button>
+        </div>
+      </div>
+ 
+    </article>
+  </template>
+
+    <!-- Scripts -->
+    <!-- El orden es importante para los scripts entonces toca primero el del componente y despues la logica-->
+
+    <script src="js/componentes/tarjetas-rutas.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/rutas.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

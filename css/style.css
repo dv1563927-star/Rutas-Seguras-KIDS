@@ -1,0 +1,388 @@
+/* =============================================
+   RUTAS SEGURAS KIDS — styles.css
+   =============================================
+   Tabla de contenido:
+   1. Variables y reset
+   2. Tipografía base
+   3. Encabezado
+   4. Layout principal
+   5. Secciones
+   6. Formulario
+   7. Botones
+   8. Lista de rutas
+   9. Pie de página
+   10. Responsividad (3 breakpoints)
+============================================== */
+
+
+/* =============================================
+   1. VARIABLES Y RESET
+============================================== */
+
+:root {
+  /* Colores principales */
+  --color-primario: #1a1a2e;       /* gris carbón muy oscuro */
+  --color-primario-claro: #2d2d44; /* gris carbón medio */
+  --color-acento: #4ecca3;         /* verde menta */
+  --color-acento-oscuro: #38b28d;  /* verde menta oscuro */
+
+  /* Fondos */
+  --color-fondo: #12121e;          /* fondo casi negro */
+  --color-fondo-blanco: #1e1e30;   /* "blanco" = gris oscuro */
+  --color-fondo-suave: #25253a;    /* gris un poco más claro */
+
+  /* Textos */
+  --color-texto: #e8e8f0;          /* blanco suave */
+  --color-texto-suave: #a0a0c0;    /* gris claro */
+  --color-texto-claro: #6060a0;    /* gris más apagado */
+
+  /* Bordes y sombras */
+  --color-borde: #2d2d44;
+  --sombra-suave: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --sombra-media: 0 4px 16px rgba(0, 0, 0, 0.4);
+
+  /* Espaciados */
+  --espacio-xs: 0.25rem;  /*  4px */
+  --espacio-s:  0.5rem;   /*  8px */
+  --espacio-m:  1rem;     /* 16px */
+  --espacio-l:  1.5rem;   /* 24px */
+  --espacio-xl: 2rem;     /* 32px */
+  --espacio-xxl: 3rem;    /* 48px */
+
+  /* Bordes redondeados */
+  --radio-s: 8px;
+  --radio-m: 12px;
+  --radio-l: 16px;
+  --radio-xl: 24px;
+
+  /* Fuentes */
+  --fuente-titulos: 'Nunito', sans-serif;
+  --fuente-texto: 'Poppins', sans-serif;
+}
+
+/* Reset básico: elimina márgenes y paddings por defecto del navegador */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Configuración general del documento */
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--fuente-texto);
+  font-size: 1rem;
+  color: var(--color-texto);
+  background-color: var(--color-fondo);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Imágenes responsivas por defecto */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+
+/* =============================================
+   2. TIPOGRAFÍA BASE
+============================================== */
+
+h1, h2, h3, h4 {
+  font-family: var(--fuente-titulos);
+  font-weight: 800;
+  line-height: 1.2;
+  color: var(--color-texto);
+}
+
+h1 { font-size: 1.75rem; }
+h2 { font-size: 1.3rem; }
+h3 { font-size: 1.1rem; }
+
+p { color: var(--color-texto-suave); }
+
+
+/* =============================================
+   3. ENCABEZADO
+============================================== */
+
+.encabezado {
+  background: var(--color-primario);
+  color: white;
+  padding: var(--espacio-l) var(--espacio-m);
+  box-shadow: var(--sombra-media);
+}
+
+.encabezado-contenido {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.encabezado-marca {
+  display: flex;
+  align-items: center;
+  gap: var(--espacio-s);
+  margin-bottom: var(--espacio-xs);
+}
+
+.encabezado-icono {
+  font-size: 2rem;
+}
+
+.encabezado-titulo {
+  font-size: 1.6rem;
+  color: var(--color-texto);
+}
+
+/* El <span> dentro del título lleva el acento amarillo */
+.encabezado-titulo span {
+  color: var(--color-acento);
+}
+
+.encabezado-subtitulo {
+  color: #7878a8; /* gris lavanda */
+  font-size: 0.9rem;
+  margin-left: 2.8rem; /* alineado con el texto del título */
+}
+
+
+/* =============================================
+   4. LAYOUT PRINCIPAL
+============================================== */
+
+.contenido-principal {
+  flex: 1; /* ocupa todo el espacio disponible entre header y footer */
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+  padding: var(--espacio-xl) var(--espacio-m);
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-xl);
+}
+
+
+/* =============================================
+   5. SECCIONES
+============================================== */
+
+.seccion {
+  background: var(--color-fondo-blanco);
+  border-radius: var(--radio-xl);
+  padding: var(--espacio-xl);
+  box-shadow: var(--sombra-suave);
+}
+
+.seccion-titulo {
+  font-size: 1.2rem;
+  color: #fff;
+  margin-bottom: var(--espacio-l);
+  padding-bottom: var(--espacio-s);
+  border-bottom: 2px solid var(--color-borde);
+}
+
+
+/* =============================================
+   6. FORMULARIO
+============================================== */
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-m);
+}
+
+/* Cada campo agrupa: etiqueta + input + mensaje de error */
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-xs);
+}
+
+.campo-etiqueta {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-texto);
+}
+
+.campo-input {
+  width: 100%;
+  padding: 0.65rem var(--espacio-m);
+  border: 2px solid var(--color-borde);
+  border-radius: var(--radio-s);
+  font-size: 0.95rem;
+  font-family: var(--fuente-texto);
+  color: #808080;
+  background: var(--color-fondo-suave);
+  transition: border-color 0.2s, box-shadow 0.2s;
+  outline: none;
+}
+
+/* Estado activo del input */
+.campo-input:focus {
+  border-color: var(--color-primario-claro);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+  background: white;
+}
+
+/* Estado de error del input (JS agrega esta clase) */
+.campo-input.error {
+  border-color: #ef4444;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.15);
+}
+
+/* Mensaje de error debajo del input */
+.campo-error {
+  font-size: 0.8rem;
+  color: #ef4444;
+  min-height: 1rem; /* evita que el layout salte cuando aparece el error */
+}
+
+
+/* =============================================
+   7. BOTONES
+============================================== */
+
+.boton {
+  padding: 0.7rem var(--espacio-xl);
+  border: none;
+  border-radius: var(--radio-s);
+  font-size: 0.95rem;
+  font-family: var(--fuente-texto);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s, box-shadow 0.2s;
+}
+
+.boton:active {
+  transform: scale(0.98);
+}
+
+/* Botón principal (azul) */
+.boton-primario {
+  background: var(--color-acento);
+  color: #12121e; /* texto oscuro sobre verde menta */
+  align-self: flex-start;
+  box-shadow: 0 4px 12px rgba(78, 204, 163, 0.3);
+  padding: 7px;
+  border-radius: 8px;
+  transition: 0.2s;
+}
+
+.boton-primario:hover {
+  background: var(--color-acento-oscuro);
+  box-shadow: 0 6px 16px rgba(78, 204, 163, 0.4);
+  transform: scale(1.1);
+}
+
+
+/* =============================================
+   8. LISTA DE RUTAS
+============================================== */
+
+/* Grid que contiene las tarjetas de rutas */
+.lista-rutas {
+  display: grid;
+  gap: var(--espacio-l);
+
+  /* móvil: 1 columna */
+  grid-template-columns: 1fr;
+}
+
+/* Mensaje cuando no hay rutas */
+.lista-vacia {
+  color: var(--color-texto-claro);
+  font-size: 0.95rem;
+  text-align: center;
+  padding: var(--espacio-xl);
+  grid-column: 1 / -1; /* ocupa todas las columnas del grid */
+}
+
+
+/* =============================================
+   9. PIE DE PÁGINA
+============================================== */
+
+.pie-pagina {
+  text-align: center;
+  padding: var(--espacio-l);
+  font-size: 0.85rem;
+  color: var(--color-texto-claro);
+  border-top: 1px solid var(--color-borde);
+  margin-top: auto;
+}
+
+
+/* =============================================
+   10. RESPONSIVIDAD
+============================================== */
+
+/* --- BREAKPOINT 1: Tablet (600px en adelante) --- */
+@media (min-width: 600px) {
+
+  h1 { font-size: 2rem; }
+
+  .encabezado {
+    padding: var(--espacio-xl) var(--espacio-xl);
+  }
+
+  /* El formulario pasa a dos columnas */
+  .formulario {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--espacio-m);
+  }
+
+  /* El botón ocupa las dos columnas */
+  .boton-primario {
+    grid-column: 1 / -1;
+  }
+
+  /* Las rutas muestran 2 tarjetas por fila */
+  .lista-rutas {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* --- BREAKPOINT 2: Desktop (1024px en adelante) --- */
+@media (min-width: 1024px) {
+
+  .encabezado-titulo {
+    font-size: 2rem;
+  }
+
+  /* El layout principal pasa a dos columnas lado a lado */
+  .contenido-principal {
+    display: grid;
+    grid-template-columns: 360px 1fr;
+    align-items: start;
+    gap: var(--espacio-xl);
+  }
+
+  /* El formulario se queda fijo a la izquierda */
+  .seccion-formulario {
+    position: sticky;
+    top: var(--espacio-l);
+  }
+
+  /* Las rutas muestran 2 tarjetas por fila dentro de su columna */
+  .lista-rutas {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* --- BREAKPOINT 3: Pantallas grandes (1280px en adelante) --- */
+@media (min-width: 1280px) {
+
+  /* Las rutas pueden mostrar 3 tarjetas por fila */
+  .lista-rutas {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
