@@ -18,53 +18,101 @@
         </div>
     </header>
 
-    <!-- CONTENIDO PRINCIPAL (el formulario)-->
-    <main class = "contenido-principal">
-        <!--El formulario va aca-->
-        <section class = "seccion-formulario">
-            <h2 class ="seccion-titulo">➕ Nueva Ruta</h2>
+    <!-- CONTENIDO PRINCIPAL (los formularios) -->
+    <main class="contenido-principal">
 
-            <form id="form-ruta" class="formulario" novalidate>
-                <div class="campo">
-                    <label for="nombre-ruta" class="campo-etiqueta">Nombre de la ruta</label>
-                    <input type="text" id="nombre-ruta" name="nombreRuta" class="campo-input" placeholder="Ej: Ruta Norte" autocomplete="off">
-                    <span class="campo-error" id="error-nombre-ruta"></span>
-                </div>
 
-                <div class="campo">
-                    <label for="conductor" class="campo-etiqueta">Conductor</label>
-                    <input type="text" id="conductor" name="conductor" class="campo-input" placeholder="Ej: Carlos Ramirez" autocomplete="off">
-                    <span class="campo-error" id="error-conductor"></span>
-                </div>
+      <!--formulario de estudiantes para añadirlos-->
+      <section class="seccion seccion-estudiantes">
+        <h2 class="seccion-titulo">👥 Estudiantes disponibles</h2>
+        <form id="form-estudiante" class="formulario" novalidate>
+          <div class="campo">
+            <label for="nombre-estudiante" class="campo-etiqueta">Nombre del estudiante</label>
+            <input type="text" id="nombre-estudiante" name="nombreEstudiante" class="campo-input" placeholder="Ej: Daniel Fernando" autocomplete="off">
+            <span class="campo-error" id="error-nombre-estudiante"></span>
+          </div>
 
-                <div class="campo">
-                    <label for="ciudad" class="campo-etiqueta">Ciudad</label>
-                    <input type="text" id="ciudad" name="ciudad" class="campo-input" placeholder="Ej: Piedecuesta" autocomplete="off">
-                    <span class="campo-error" id="error-ciudad"></span>
-                </div>
+          <div class="campo">
+            <label for="nombre-tutor" class="campo-etiqueta">Nombre del padre de familia</label>
+            <input type="text" id="nombre-tutor" name="nombreTutor" class="campo-input" placeholder="Ej: Emilse Sarmiento" autocomplete="off">
+            <span class="campo-error" id="error-nombre-tutor"></span>
+          </div>
 
-                <button type="submit" class="boton-primario">Crear Ruta</button>
-            </form>
-        </section>
+          <div class="campo">
+            <label for="telefono" class="campo-etiqueta">Número de teléfono</label>
+            <input type="number" id="telefono" name="telefono" class="campo-input" placeholder="Ej: 123456789" autocomplete="off">
+            <span class="campo-error" id="error-telefono"></span>
+          </div>
 
-        <!-- Seccion de rutas ya creadas-->
+          <div class="campo">
+            <label for="direccion" class="campo-etiqueta">Direccion</label>
+            <input type="text" id="direccion" name="direccion" class="campo-input" placeholder="Ej: Calle 123" autocomplete="off">
+            <span class="campo-error" id="error-direccion"></span>
+          </div>
 
-        <section class="seccion-rutas">
-            <h2 class="seccion-titulo">🗺️ Rutas activas</h2>
+          <button type="submit" class="boton-primario">Crear estudiante</button>
+        </form>
+      </section>
 
-            <!-- Aqui JS inserta los route cards dinamicamente -->
-            <div class="lista-rutas" id="lista-rutas">
-                <p class="lista-vacia" id="mensaje-vacio">No hay rutas creadas aun. ¡Agrega la primera!</p>
-            </div>
-        </section>
+      <!-- formulario de nuevas rutas -->
+
+      <section class="seccion seccion-formulario">
+        <h2 class="seccion-titulo">➕ Nueva Ruta</h2>
+
+        <form id="form-ruta" class="formulario" novalidate>
+          <div class="campo">
+            <label for="nombre-ruta" class="campo-etiqueta">Nombre de la ruta</label>
+            <input type="text" id="nombre-ruta" name="nombreRuta" class="campo-input" placeholder="Ej: Ruta Norte" autocomplete="off">
+            <span class="campo-error" id="error-nombre-ruta"></span>
+          </div>
+
+          <div class="campo">
+            <label for="conductor" class="campo-etiqueta">Conductor</label>
+            <input type="text" id="conductor" name="conductor" class="campo-input" placeholder="Ej: Carlos Ramirez" autocomplete="off">
+            <span class="campo-error" id="error-conductor"></span>
+          </div>
+
+          <div class="campo">
+            <label for="ciudad" class="campo-etiqueta">Ciudad</label>
+            <input type="text" id="ciudad" name="ciudad" class="campo-input" placeholder="Ej: Piedecuesta" autocomplete="off">
+            <span class="campo-error" id="error-ciudad"></span>
+          </div>
+
+          <div class="campo">
+            <label for="hora-salida" class="campo-etiqueta">Hora de salida</label>
+            <input type="time" id="hora-salida" name="horaSalida" class="campo-input" autocomplete="off">
+            <span class="campo-error" id="error-hora-salida"></span>
+          </div>
+
+          <button type="submit" class="boton-primario">Crear Ruta</button>
+        </form>
+      </section>
+
+      <!-- lista de rutas ya creadas -->
+
+      <section class="seccion seccion-rutas">
+        <h2 class="seccion-titulo">🗺️ Rutas activas</h2>
+        <div class="lista-rutas" id="lista-rutas">
+          <p class="lista-vacia" id="mensaje-vacio">No hay rutas creadas aun. ¡Agrega la primera!</p>
+        </div>
+      </section>
+
+      <!-- lista estudiantes ya creados -->
+
+      <section class="seccion seccion-lista-estudiantes">
+        <h2 class="seccion-titulo">📋 Estudiantes creados</h2>
+        <div class="lista-estudiantes-disponibles" id="lista-estudiantes-disponibles">
+          <p class="lista-vacia" id="mensaje-estudiantes-vacio">No hay estudiantes creados aún.</p>
+        </div>
+      </section>
     </main>
 
     <!-- Footer pa mero estilo-->
     <footer class="pie-pagina">
-        <p>&copy; 2026 Rutas Seguras KIDS. pa mero visaje</p>
+        <p>&copy; 2026 Rutas Seguras KIDS. el elden lord del visaje</p>
     </footer>
 
-    <template id="route-card-template">
+    <template id="route-card-template" >
     <style>
       /* Este CSS vive dentro del Shadow DOM,
          no afecta ni es afectado por styles.css */

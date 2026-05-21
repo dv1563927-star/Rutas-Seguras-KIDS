@@ -170,12 +170,10 @@ p { color: var(--color-texto-suave); }
 
 .contenido-principal {
   flex: 1; /* ocupa todo el espacio disponible entre header y footer */
-  max-width: 1100px;
-  width: 100%;
-  margin: 0 auto;
-  padding: var(--espacio-xl) var(--espacio-m);
-  display: flex;
-  flex-direction: column;
+    max-width: 1400px;
+    width: min(100%, 1400px);
+    margin: 0 auto;
+    padding: var(--espacio-xl) var(--espacio-l);
   gap: var(--espacio-xl);
 }
 
@@ -287,7 +285,6 @@ p { color: var(--color-texto-suave); }
   background: var(--color-acento);
   color: #12121e; /* texto oscuro sobre verde menta */
   align-self: flex-start;
-  box-shadow: 0 4px 12px rgba(78, 204, 163, 0.3);
   padding: 7px;
   border-radius: 8px;
   transition: 0.2s;
@@ -295,8 +292,7 @@ p { color: var(--color-texto-suave); }
 
 .boton-primario:hover {
   background: var(--color-acento-oscuro);
-  box-shadow: 0 6px 16px rgba(78, 204, 163, 0.4);
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 
@@ -320,6 +316,47 @@ p { color: var(--color-texto-suave); }
   text-align: center;
   padding: var(--espacio-xl);
   grid-column: 1 / -1; /* ocupa todas las columnas del grid */
+}
+
+.lista-estudiantes-disponibles {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-m);
+}
+
+.estudiante-card {
+  background: var(--color-fondo-suave);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio-s);
+  padding: var(--espacio-m);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--espacio-s);
+}
+
+.estudiante-card strong {
+  color: var(--color-texto);
+}
+
+.estudiante-card span {
+  color: var(--color-texto-suave);
+  font-size: 0.95rem;
+}
+
+.boton-eliminar-estudiante {
+  background: none;
+  border: 1px solid #f87171;
+  color: #f87171;
+  border-radius: 8px;
+  padding: 0.3rem 0.6rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.boton-eliminar-estudiante:hover {
+  background: #f87171;
+  color: #12121e;
 }
 
 
@@ -375,23 +412,24 @@ p { color: var(--color-texto-suave); }
     font-size: 2rem;
   }
 
-  /* El layout principal pasa a dos columnas lado a lado */
+  /* El layout principal se organiza en una cuadrícula 2x2 */
   .contenido-principal {
     display: grid;
-    grid-template-columns: 360px 1fr;
+    grid-template-columns: repeat(2, minmax(360px, 1fr));
+    grid-template-rows: auto 1fr;
     align-items: start;
     gap: var(--espacio-xl);
   }
 
-  /* El formulario se queda fijo a la izquierda */
-  .seccion-formulario {
-    position: sticky;
-    top: var(--espacio-l);
+  .seccion-rutas,
+  .seccion-lista-estudiantes {
+    min-height: 420px;
   }
 
-  /* Las rutas muestran 2 tarjetas por fila dentro de su columna */
   .lista-rutas {
-    grid-template-columns: repeat(2, 1fr);
+    display: grid;
+    gap: var(--espacio-l);
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   }
 }
 
