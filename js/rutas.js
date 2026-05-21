@@ -47,3 +47,21 @@ function crearEstudiante(datos) {
     //retorno el nuevo objeto
     return nuevoEstudiante;
 };
+
+function eliminarRuta(id) {
+    rutas = rutas.filter(r => r.id !== id);
+    guardarDatos();
+}
+
+function eliminarEstudiante(id) {
+    estudiantes = estudiantes.filter(e => e.id !== id);
+    guardarDatos();
+};
+
+function agregarEstudianteRuta(idRuta, nombre) {
+    const ruta = rutas.find(r => r.id === idRuta);
+    if (!ruta) return;
+    ruta.estudiantes.push({id: Date.now(), nombre:nombre});
+    guardarDatos();
+};
+

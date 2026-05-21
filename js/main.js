@@ -93,8 +93,26 @@ function renderizarRutas() {
     });
 };
 
-//para iniciarlo
+listaRutas.addEventListener("eliminarRuta", (e) => {
+    eliminarRuta(e.detail.id);
+    renderizarRutas();
+})
 
+listaEstudiantes.addEventListener("click", (e) => {
+    if (e.target.matches(".boton-eliminar-estudiante")) {
+        const id = Number(e.target.dataset.id);
+        eliminarEstudiante(id);
+        renderizarEstudiantes();
+    }
+});
+
+listaRutas.addEventListener("agregarEstudianteRuta", (e) => {
+    const {idRuta, nombre} = e.detail;
+    agregarEstudianteRuta(idRuta, nombre);
+    renderizarRuta();
+})
+
+//para iniciarlo
 cargarDatos(); //aca carga la informacion cuando la pagina se inicia
 
 renderizarRutas();
