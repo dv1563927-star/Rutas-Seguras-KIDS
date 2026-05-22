@@ -73,7 +73,7 @@
 
           <div class="campo">
             <label for="telefono" class="campo-etiqueta">Número de teléfono</label>
-            <input type="number" id="telefono" name="telefono" class="campo-input" placeholder="Ej: 123456789" autocomplete="off" required>
+            <input type="tel" id="telefono" name="telefono" class="campo-input" placeholder="Ej: 123456789" autocomplete="off" required>
             <span class="campo-error" id="error-telefono"></span>
           </div>
 
@@ -303,9 +303,11 @@
     <!--- Scripts --->
     <!-- El orden es importante para los scripts entonces toca primero el del componente y despues la logica-->
 
-    <script src="js/componentes/tarjetas-rutas.js"></script>
     <script src="js/api.js"></script>
+    <script src="js/componentes/tarjetas-rutas.js"></script>
     <script src="js/rutas.js"></script>
     <script src="js/main.js"></script>
+
+
 </body>
 </html>
