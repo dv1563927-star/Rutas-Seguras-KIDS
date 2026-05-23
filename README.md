@@ -49,45 +49,56 @@ A continuación se muestra el flujo de uso de la aplicación:
 
 ### 1. Página de inicio
 ![Vista principal](img/inicioPagina.png)
+
 *Interfaz principal con formularios de creación y listado de rutas y estudiantes.*
 
 ### 2. Creación de una ruta
 ![Formulario de rutas](img/formularioRutas.png)
+
 *Completa los campos: nombre de la ruta, conductor, ciudad y hora de salida.*
 
 ### 3. Creación de un estudiante
 ![Formulario de estudiantes](img/formularioEstudiante.png)
+
 *Registra al estudiante con nombre, tutor, teléfono y dirección.*
 
 ### 4. Listado de rutas creadas
 ![Rutas creadas](img/rutasCreadas.png)
+
 *Cada ruta se muestra en una tarjeta individual con su información y estudiantes asignados.*
 
 ### 5. Listado de estudiantes disponibles
 ![Lista de estudiantes](img/listaEstudiantes.png)
+
 *Todos los estudiantes registrados aparecen aquí. Puedes eliminarlos con el botón correspondiente.*
 
 ### 6. Asignación de estudiante a una ruta
 ![Agregar estudiante a ruta](img/agregarEstudiante.png)
+
 *Dentro de la tarjeta de ruta, escribe el nombre del estudiante (debe existir previamente) y haz clic en "+ Agregar".*
 
 ### 7. Edición de una ruta
 ![Botón editar](img/btnEditar.png)
+
 *Haz clic en el lápiz (✏️) de la tarjeta para editar los datos de la ruta.*
 
 ![Formulario de edición](img/formularioEditar.png)
+
 *El formulario se llena con los datos actuales y el botón cambia a "Actualizar Ruta". Modifica los campos y guarda.*
 
 ### 8. Eliminación de una ruta
 ![Botón eliminar ruta](img/btnEliminarRuta.png)
+
 *El botón 🗑️ elimina la ruta completa (incluyendo sus estudiantes asignados).*
 
 ### 9. Visualización del clima
 ![Consulta de clima](img/consultaClima.png)
+
 *Cada tarjeta muestra automáticamente el clima actual de la ciudad de la ruta (temperatura y descripción).*
 
 ### 10. Validación de formularios
 ![Validación de campos](img/validacionCampos.png)
+
 *Si intentas enviar un formulario con campos vacíos o datos incorrectos (ej. teléfono con menos de 7 dígitos), se muestran mensajes de error.*
 
 ## 🧪 Prueba la aplicación
