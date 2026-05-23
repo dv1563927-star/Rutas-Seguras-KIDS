@@ -82,7 +82,7 @@ A continuación se muestra el flujo de uso de la aplicación:
 
 *Haz clic en el lápiz (✏️) de la tarjeta para editar los datos de la ruta.*
 
-![Formulario de edición](img/formularioEditarRuta.png)
+![Formulario de edición](img/formularioEditar.png)
 
 *El formulario se llena con los datos actuales y el botón cambia a "Actualizar Ruta". Modifica los campos y guarda.*
 
