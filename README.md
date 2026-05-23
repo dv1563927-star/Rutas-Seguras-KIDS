@@ -97,7 +97,7 @@ A continuación se muestra el flujo de uso de la aplicación:
 *Cada tarjeta muestra automáticamente el clima actual de la ciudad de la ruta (temperatura y descripción).*
 
 ### 10. Validación de formularios
-![Validación de campos](img/validacionCampos.png)
+![Validación de campos](img/validacionCampo.png)
 
 *Si intentas enviar un formulario con campos vacíos o datos incorrectos (ej. teléfono con menos de 7 dígitos), se muestran mensajes de error.*
 
@@ -129,12 +129,8 @@ Rutas-Seguras-KIDS/
 
 ## 👩‍💻 Autor
 
-**Tu nombre** – [GitHub](https://github.com/dv1563927-star)
+**Daniel Fernando Vargas Sarmiento** – [GitHub](https://github.com/dv1563927-star)
 
 ## 📄 Licencia
 
 Proyecto educativo sin fines comerciales. Libre para ser utilizado como referencia en trabajos escolares.
-
----
-
-¡Gracias por visitar este repositorio! Si tienes alguna sugerencia, no dudes en abrir un issue.
