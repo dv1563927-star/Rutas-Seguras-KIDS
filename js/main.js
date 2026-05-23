@@ -162,6 +162,7 @@ listaEstudiantes.addEventListener("click", (e) => {
         const id = Number(e.target.dataset.id);
         eliminarEstudiante(id);
         renderizarEstudiantes();
+        renderizarRutas();
     }
 });
 

@@ -36,7 +36,11 @@ class RouteCard extends HTMLElement {
         lista.innerHTML = "";
         datos.estudiantes.forEach((est) => {
             const li = document.createElement("li");
-            li.textContent = est.nombre;
+            const nombreCapitalizado = est.nombre.split(' ').map(palabra => 
+                palabra.charAt(0).toUpperCase() + palabra.slice(1)
+            ).join(' ');
+            li.textContent = nombreCapitalizado;
+            // **********************
             lista.appendChild(li);
         });
         
