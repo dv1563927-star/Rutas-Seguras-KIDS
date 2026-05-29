@@ -362,6 +362,98 @@ p { color: var(--color-texto-suave); }
   color: #12121e;
 }
 
+/* EXAMEN ----
+
+/*control asistencia */
+
+.lista-control-asistencia {
+    display: flex;
+    flex-direction: column;
+    gap: var(--espacio-s);
+}
+
+.asistencia-item {
+    display: flex;
+    align-items: center;
+    gap: var(--espacio-m);
+    background: var(--color-fondo-suave);
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio-s);
+    padding: var(--espacio-m);
+    transition: border-color 0.2s;
+}
+
+.asistencia-item:hover {
+    border-color: var(--color-acento);
+}
+
+.asistencia-item input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    accent-color: var(--color-acento);
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.asistencia-item label {
+    color: var(--color-texto);
+    font-size: 0.95rem;
+    cursor: pointer;
+    flex: 1;
+}
+
+.boton-asistencia {
+    margin-top: var(--espacio-m);
+    width: 100%;
+    text-align: center;
+}
+
+.resumen-asistencia {
+    margin-top: var(--espacio-l);
+    padding: var(--espacio-m);
+    border-radius: var(--radio-m);
+    background: var(--color-fondo-suave);
+    border: 1px solid var(--color-borde);
+}
+
+.resumen-asistencia.oculto {
+    display: none;
+}
+
+.resumen-titulo {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--color-texto);
+    margin-bottom: var(--espacio-s);
+}
+
+.resumen-lista {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.resumen-lista li {
+    padding: 0.5rem 0.8rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.resumen-presente {
+    color: #4ecca3;
+    background: rgba(78, 204, 163, 0.1);
+    border-left: 4px solid #4ecca3;
+}
+
+.resumen-ausente {
+    color: #f87171;
+    background: rgba(248, 113, 113, 0.1);
+    border-left: 4px solid #f87171;
+}
+/* EXAMEN ----
 
 /* =============================================
    9. PIE DE PÁGINA

@@ -1,16 +1,20 @@
 let rutas = [];
 let estudiantes = [];
+let asistencia = {};  // { [estudianteId]: true }  → solo guarda los presentes
 
 //guardar todo
 function guardarDatos() {
     localStorage.setItem("rutas", JSON.stringify(rutas));
     localStorage.setItem("estudiantes", JSON.stringify(estudiantes));
+    localStorage.setItem("asistencia", JSON.stringify(asistencia));
 };
 
 //aqui cargo todos los datos
 function cargarDatos() {
     rutas = JSON.parse(localStorage.getItem("rutas")) || [];
     estudiantes = JSON.parse(localStorage.getItem("estudiantes")) || [];
+    asistencia = JSON.parse(localStorage.getItem("asistencia")) || {};
+        guardarDatos();
 }
 
 function crearRuta(datos) {
@@ -81,4 +85,3 @@ function agregarEstudianteRuta(idRuta, nombre) {
     });
     guardarDatos();
 };
-
